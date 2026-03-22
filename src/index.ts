@@ -80,9 +80,7 @@ server.tool(
     fields: z
       .string()
       .optional()
-      .describe(
-        'Comma-separated fields to return (default: name,url,protocol,price_sats,health_status). Available: id,name,description,url,protocol,price_sats,price_usd,payment_asset,payment_network,category,provider,source,featured,health_status,uptime_30d,latency_p50_ms,last_checked,registered_at,http_method,reliability_score. Use * or all for all fields.',
-      ),
+      .describe('Comma-separated fields (default: name,url,protocol,price_sats,health_status). Use * for all fields.'),
     format: z
       .enum(['json', 'csv'])
       .optional()

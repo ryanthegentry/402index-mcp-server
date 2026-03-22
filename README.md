@@ -57,6 +57,17 @@ Add to `.cursor/mcp.json`:
 | `list_categories` | Browse all API categories with per-protocol endpoint counts |
 | `get_directory_stats` | Directory-wide health stats, protocol breakdown, and sync timestamps |
 
+### Token-Optimized Defaults (v0.2.0)
+
+Responses are compact by default to minimize token usage in agent workflows:
+
+- **`search_services`** returns 10 results with 5 fields (`name`, `url`, `protocol`, `price_sats`, `health_status`) by default
+  - `fields` — Comma-separated field names to return, or `*` for all 20 fields
+  - `format` — `json` (default) or `csv` for tabular output (~29% fewer tokens)
+  - `limit` — Results per page (default 10, max 200)
+- **`list_categories`** returns a flat `[{name, count}]` array by default
+  - `summary` — `true` (default) for compact output, `false` for full protocol breakdown
+
 ## What Can Your Agent Discover?
 
 - **L402 (Lightning)** — Self-custodial Bitcoin micropayments. 477 endpoints from providers like mutinynet faucet, sats4ai, LightningEnable.
