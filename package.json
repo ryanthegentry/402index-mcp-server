@@ -56,6 +56,6 @@
     "node": ">=18"
   },
   "bin": {
-    "402index-mcp-server": "dist/index.js"
+    "mcp-server": "dist/index.js"
   }
 }
