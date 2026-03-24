@@ -7,42 +7,68 @@ The [402 Index](https://402index.io) is the world's largest directory of paid AP
 ## Quick Start
 
 ```bash
-npx @402index/mcp-server
+npm install -g @402index/mcp-server
+mcp-server
 ```
 
 ## Installation
 
+### Claude Code
+
+```bash
+npm install -g @402index/mcp-server
+claude mcp add 402index -- mcp-server
+```
+
 ### Claude Desktop
 
-Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+Install the server, then add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+```bash
+npm install -g @402index/mcp-server
+```
 
 ```json
 {
   "mcpServers": {
     "402index": {
-      "command": "npx",
-      "args": ["@402index/mcp-server"]
+      "command": "mcp-server"
     }
   }
 }
 ```
 
-### Claude Code
-
-```bash
-claude mcp add 402index -- npx @402index/mcp-server
-```
-
 ### Cursor
 
-Add to `.cursor/mcp.json`:
+Install the server, then add to `.cursor/mcp.json`:
+
+```bash
+npm install -g @402index/mcp-server
+```
 
 ```json
 {
   "mcpServers": {
     "402index": {
-      "command": "npx",
-      "args": ["@402index/mcp-server"]
+      "command": "mcp-server"
+    }
+  }
+}
+```
+
+### Cline
+
+Install the server, then add to your Cline MCP settings:
+
+```bash
+npm install -g @402index/mcp-server
+```
+
+```json
+{
+  "mcpServers": {
+    "402index": {
+      "command": "mcp-server"
     }
   }
 }
