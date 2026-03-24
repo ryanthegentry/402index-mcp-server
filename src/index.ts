@@ -2,7 +2,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
-import { fileURLToPath } from 'node:url'
 
 const INDEX_URL = process.env.INDEX_URL || 'https://402index.io'
 
@@ -211,9 +210,7 @@ async function main() {
   console.error(`[402index-mcp] Server running, connected to ${INDEX_URL}`)
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  main().catch((err) => {
-    console.error('[402index-mcp] Fatal error:', err)
-    process.exit(1)
-  })
-}
+main().catch((err) => {
+  console.error('[402index-mcp] Fatal error:', err)
+  process.exit(1)
+})
